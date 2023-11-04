@@ -1,3 +1,5 @@
+![Screenshot (423)](https://github.com/IbiminaFG/project-promptopia/assets/82587474/aedd1a64-270f-4796-bf6c-b0ca1148d70e)
+
 # Promptopia
 
 Promptopia is an open-source web application that leverages AI to generate, share, and discover creative prompts. Whether you're a writer, artist, or anyone seeking inspiration, Promptopia provides a platform to spark your imagination. This README provides an overview of the project, its features, and how to get started.
