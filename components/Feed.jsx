@@ -23,8 +23,10 @@ const Feed = () => {
 
   const filterPosts = (query) => {
     const searchedPosts = query
-      ? posts.filter((post) =>
-          post.prompt.toLowerCase().includes(query.toLowerCase())
+      ? posts.filter(
+          (post) =>
+            post.prompt.toLowerCase().includes(query.toLowerCase()) ||
+            post.tag.toLowerCase().includes(query.toLowerCase())
         )
       : posts;
     setFilteredPosts(searchedPosts);
@@ -34,8 +36,13 @@ const Feed = () => {
     filterPosts(searchText);
   }, [searchText]);
 
-  const handleSearchChange = async (e) => {
+  const handleSearchChange = (e) => {
     setSearchText(e.target.value);
+  };
+
+  const handleTagClick = (tag) => {
+    const tagText = tag.replace("#", "");
+    setSearchText(tagText);
   };
 
   useEffect(() => {
@@ -63,7 +70,7 @@ const Feed = () => {
         />
       </form>
 
-      <PromptCardList data={filteredPosts} handleTagClick={() => {}} />
+      <PromptCardList data={filteredPosts} handleTagClick={handleTagClick} />
     </section>
   );
 };
