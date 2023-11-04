@@ -26,7 +26,8 @@ const Feed = () => {
       ? posts.filter(
           (post) =>
             post.prompt.toLowerCase().includes(query.toLowerCase()) ||
-            post.tag.toLowerCase().includes(query.toLowerCase())
+            post.tag.toLowerCase().includes(query.toLowerCase()) ||
+            post.creator.username.toLowerCase().includes(query.toLowerCase())
         )
       : posts;
     setFilteredPosts(searchedPosts);
